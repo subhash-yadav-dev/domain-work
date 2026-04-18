@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg: #F8FAFC;
+  --color-sidebar-bg: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-text-main: #1E293B;
+  --color-text-muted: #64748B;
+  --color-accent: #4F46E5;
+  --color-accent-soft: #EEF2FF;
+  --color-success: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main font-sans antialiased;
+  }
+}
+
+.nav-item {
+  @apply flex items-center px-4 py-3 rounded-lg cursor-pointer font-medium text-sm transition-all text-text-muted mb-1;
+}
+
+.nav-item.active {
+  @apply bg-accent-soft text-accent;
+}
+
+.workspace-grid {
+  @apply grid gap-5 min-h-0;
+}
+
+.text-box {
+  @apply flex-1 bg-white border border-border rounded p-4 font-mono text-[13px] leading-relaxed resize-none text-slate-700 outline-none transition-all focus:border-accent focus:ring-3 focus:ring-accent-soft;
+}
+
+.status-badge {
+  @apply text-[10px] px-2.5 py-1 bg-[#D1FAE5] text-[#065F46] rounded-full font-bold uppercase tracking-wider;
+}
+
+.btn {
+  @apply px-7 py-3 rounded-md font-semibold text-sm cursor-pointer transition-colors border-none;
+}
+
+.btn-primary {
+  @apply bg-accent text-white hover:bg-indigo-700;
+}
+
+.btn-secondary {
+  @apply bg-white border border-border text-text-main hover:bg-slate-50;
+}
+
+.btn-success {
+  @apply bg-success text-white hover:bg-emerald-600;
+}
+
+.column-label {
+  @apply text-[11px] font-bold uppercase tracking-widest text-text-muted;
+}
+
